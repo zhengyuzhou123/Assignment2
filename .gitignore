@@ -170,6 +170,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# Ignore datasets
 *.tgz
 *.tar.gz
 *.zip
