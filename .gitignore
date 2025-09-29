@@ -175,3 +175,8 @@ cython_debug/
 *.tar.gz
 *.zip
 *.csv
+# Ignore Spark output
+tables/
+_output/
+*.crc
+*_SUCCESS
