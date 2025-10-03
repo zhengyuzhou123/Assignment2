@@ -5,8 +5,12 @@ from pyspark.sql.functions import monotonically_increasing_id
 spark = SparkSession.builder.appName("RelationalTables").getOrCreate()
 
 # Load the CSV file into a Spark DataFrame
-df = spark.read.option("header", "true").option("inferSchema",
-"true").csv("data/lightcast_job_postings.csv")
+df = spark.read.option("header", "true") \
+    .option("inferSchema", "true") \
+    .option("multiLine", "true") \
+    .option("escape", "\"") \
+    .csv("data/lightcast_job_postings.csv")
+
 
 #Company DataFrame
 companies = df.select(
